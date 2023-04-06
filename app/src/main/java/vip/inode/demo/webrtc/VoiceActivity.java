@@ -163,8 +163,8 @@ public class VoiceActivity extends AppCompatActivity {
                             agcUtils.agcProcess(agcId, outNsData, 1, 160, outAgcData,
                                     0, 0, 0, false);
                             byte[] outDatas = new byte[320];
-                            for (int i = 0; i < inputData.length; i++) {
-                                short outAgcDatum = inputData[i];
+                            for (int i = 0; i < outAgcData.length; i++) {
+                                short outAgcDatum = outAgcData[i];
                                 byte high = (byte) ((0xFF00 & outAgcDatum)>>8);//定义第一个byte
                                 byte low = (byte) (0x00FF & outAgcDatum);
                                 outDatas[i * 2 + 1] = high;
